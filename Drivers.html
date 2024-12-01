@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Details - DriveShield</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#40E0D0',
+                            DEFAULT: '#00CED1',
+                            dark: '#0077BE',
+                        },
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(180deg, #40E0D0 0%, #0077BE 100%)',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-gradient-primary min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-8">
+            <div class="flex items-center">
+                <img src="./pictures/logo.jpeg" alt="DriveShield Logo" class="h-12 w-12 rounded-full">
+                <span class="ml-2 text-white text-xl font-bold">DriveShield</span>
+            </div>
+            <button onclick="goBack()" class="text-white hover:underline">
+                &larr; Back
+            </button>
+        </header>
+
+        <!-- Driver Details Card -->
+        <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                <!-- Driver Picture Section -->
+                <div class="flex flex-col items-center">
+                    <div class="w-48 h-48 rounded-full overflow-hidden bg-gray-200 shadow-lg">
+                        <img id="driverPicture" src="./pictures/businessman (1).png" alt="Driver Picture" class="w-full h-full object-cover">
+                    </div>
+                    <button onclick="uploadPicture()" class="mt-4 bg-primary-DEFAULT text-white py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">
+                        Upload Picture
+                    </button>
+                </div>
+
+                <!-- Driver Information -->
+                <div class="flex-grow">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-6">Driver Details</h1>
+                    <div class="space-y-4">
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-700">Name</h2>
+                            <p class="text-xl text-primary-dark" id="driverName">Stephan Hawk</p>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-700">Driving License Number</h2>
+                            <p class="text-xl text-primary-dark" id="licenseNumber">246832589756</p>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-700">Aadhaar Number</h2>
+                            <p class="text-xl text-primary-dark" id="aadhaarNumber">192837465</p>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-700">Address</h2>
+                            <p class="text-xl text-primary-dark" id="address">H/23, SECTOR-2, ANGUL, ODISHA</p>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-700">Contact Number</h2>
+                            <p class="text-xl text-primary-dark" id="contactNumber">6845344267</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="mt-8 flex flex-wrap gap-4">
+                <button onclick="editDetails()" class="bg-primary-DEFAULT text-white py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">
+                    Edit Details
+                </button>
+                <button onclick="viewDrivingHistory()" class="border-2 border-primary-DEFAULT text-primary-DEFAULT py-2 px-4 rounded-lg hover:bg-primary-DEFAULT hover:text-white transition-colors">
+                    View Driving History
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function uploadPicture() {
+            alert('Picture upload functionality will be implemented soon!');
+        }
+
+        function editDetails() {
+            alert('Edit details functionality will be implemented soon!');
+        }
+
+        function viewDrivingHistory() {
+            alert('View driving history functionality will be implemented soon!');
+        }
+    </script>
+</body>
+</html>

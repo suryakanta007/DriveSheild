@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - DriveShield</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#40E0D0',
+                            DEFAULT: '#00CED1',
+                            dark: '#0077BE',
+                        },
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(180deg, #40E0D0 0%, #0077BE 100%)',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-gradient-primary min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-8">
+            <div class="flex items-center">
+                <img src="./pictures/logo.jpeg" alt="DriveShield Logo" class="h-12 w-12 rounded-full">
+                <span class="ml-2 text-white text-xl font-bold">DriveShield</span>
+            </div>
+            <button onclick="goBack()" class="text-white hover:underline">
+                &larr; Back
+            </button>
+        </header>
+
+        <!-- Registration Information Card -->
+        <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Registration</h1>
+            
+            <div class="mb-6">
+                <p class="text-lg text-gray-700 mb-4">
+                    To register for DriveShield, please visit your nearest Regional Transport Office (RTO) with the following important documents:
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+                    <li>Valid Driver's License</li>
+                    <li>Vehicle Registration Certificate (RC)</li>
+                    <li>Proof of Insurance</li>
+                    <li>Passport-sized photographs</li>
+                    <li>Address Proof (Aadhaar Card, Passport, or Utility Bill)</li>
+                    <li>PAN Card</li>
+                </ul>
+                <p class="text-lg text-gray-700">
+                    The RTO officials will guide you through the DriveShield registration process and help you set up your account.
+                </p>
+            </div>
+
+            <!-- Action Button -->
+            <div class="mt-8">
+                <button onclick="findNearestRTO()" class="w-full bg-primary-DEFAULT text-white py-3 px-4 rounded-lg hover:bg-primary-dark transition-colors text-lg font-semibold">
+                    Find Nearest RTO Office
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function findNearestRTO() {
+            // This would typically open a map or list of nearby RTO offices
+            alert('Searching for the nearest RTO office...\n\nThis feature will be implemented soon to help you locate the closest RTO office for DriveShield registration.');
+        }
+    </script>
+</body>
+</html>

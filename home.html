@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveShield - Drive Safe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#40E0D0', // turquoise
+                            DEFAULT: '#00CED1', // darker turquoise
+                            dark: '#0077BE', // blue
+                        },
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(180deg, #40E0D0 0%, #0077BE 100%)',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Ensure the mobile menu is hidden by default */
+        #mobileMenu {
+            transform: translateX(100%);
+            /* Hidden state */
+        }
+
+        /* Add this class to make the menu visible */
+        #mobileMenu.menu-open {
+    transform: translateX(0%) !important;
+}
+
+    </style>
+
+</head>
+
+<body class="bg-gradient-primary min-h-screen">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-transparent">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="./pictures/logo.jpeg" alt="DriveShield Logo" class="h-12 w-12 rounded-full">
+                <span class="ml-2 text-white text-xl font-bold">DriveShield</span>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="menuBtn" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="fixed top-0 right-0 h-full w-64 bg-white transform translate-x-full transition-transform duration-300 ease-in-out shadow-lg">
+            <div class="p-6">
+                <button id="closeBtn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+                <ul class="mt-8 space-y-4">
+                    <li><a href="./car.html" class="text-gray-700 hover:text-primary-DEFAULT block py-2">Car</a></li>
+                    <li><a href="./Drivers.html" class="text-gray-700 hover:text-primary-DEFAULT block py-2">Drivers</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-primary-DEFAULT block py-2">Account</a></li>
+                    <li><a href="./fines.html" class="text-gray-700 hover:text-primary-DEFAULT block py-2">Fines</a></li>
+                    <li><a href="./loction.html" class="text-gray-700 hover:text-primary-DEFAULT block py-2">Location</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 pt-32 pb-20">
+        <div class="text-center text-white space-y-6">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                DISCOVER THE POWER OF<br>SAFE DRIVING
+            </h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
+                Welcome to our drive safety project, where we're dedicated to promoting responsible and secure driving
+                habits among our community
+            </p>
+            <figure>
+                <img src="" alt="">
+            </figure>
+        </div>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            console.log("Hello ")
+            mobileMenu.classList.add('menu-open');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('menu-open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('menu-open');
+            }
+        });
+
+    </script>
+</body>
+
+</html>

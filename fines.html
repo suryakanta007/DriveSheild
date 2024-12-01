@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fines - DriveShield</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#40E0D0',
+                            DEFAULT: '#00CED1',
+                            dark: '#0077BE',
+                        },
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(180deg, #40E0D0 0%, #0077BE 100%)',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-gradient-primary min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-8">
+            <div class="flex items-center">
+                <img src="./pictures/logo.jpeg" alt="DriveShield Logo" class="h-12 w-12 rounded-full">
+                <span class="ml-2 text-white text-xl font-bold">DriveShield</span>
+            </div>
+            <button onclick="goBack()" class="text-white hover:underline">
+                &larr; Back
+            </button>
+        </header>
+
+        <!-- Fines Card -->
+        <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Fines and Charges</h1>
+            
+            <div class="text-center py-12">
+                <svg class="mx-auto h-24 w-24 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <h2 class="mt-4 text-2xl font-semibold text-gray-700">No Fines or Charges</h2>
+                <p class="mt-2 text-gray-600">Great job! You have no outstanding fines or charges.</p>
+            </div>
+
+            <!-- Safe Driving Tips -->
+            <div class="mt-8 bg-primary-light bg-opacity-20 rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-primary-dark mb-4">Safe Driving Tips</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Always wear your seatbelt</li>
+                    <li>Obey speed limits and traffic signs</li>
+                    <li>Never drive under the influence of alcohol or drugs</li>
+                    <li>Avoid distractions while driving, such as using your phone</li>
+                    <li>Maintain a safe following distance</li>
+                </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="mt-8 flex flex-wrap gap-4">
+                <button onclick="viewDrivingHistory()" class="bg-primary-DEFAULT text-white py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">
+                    View Driving History
+                </button>
+                <button onclick="checkForUpdates()" class="border-2 border-primary-DEFAULT text-primary-DEFAULT py-2 px-4 rounded-lg hover:bg-primary-DEFAULT hover:text-white transition-colors">
+                    Check for Updates
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function viewDrivingHistory() {
+            alert('Viewing driving history functionality will be implemented soon!');
+        }
+
+        function checkForUpdates() {
+            alert('Checking for updates... No new fines or charges found.');
+        }
+    </script>
+</body>
+</html>
