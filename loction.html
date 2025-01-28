@@ -52,7 +52,7 @@
 
             <div class="mb-6">
                 <h2 class="text-xl font-semibold text-gray-700 mb-2">Address</h2>
-                <p class="text-lg text-primary-dark" id="address">H/23, SECTOR-2, ANGUL, ODISHA</p>
+                <p class="text-lg text-primary-dark" id="address">JUNIOR & SENIOR WING, AMITY INTERNATIONAL SCHOOL-SECTOR 46, Vikas Marg, Sector 46, Gurugram, Haryana 122002</p>
             </div>
 
             <!-- Map Container -->
@@ -89,9 +89,9 @@
 
         // Initialize the map
         document.addEventListener('DOMContentLoaded', function () {
-            // Coordinates for Amity University Noida (approximate)
-            const lat = 28.5453;
-            const lon = 77.3320;
+            // Coordinates for Amity International School, Sector 46, Gurugram (approximate)
+            const lat = 28.4355;
+            const lon = 77.0720;
 
             var map = L.map('map').setView([lat, lon], 13);
 
@@ -100,9 +100,10 @@
             }).addTo(map);
 
             L.marker([lat, lon]).addTo(map)
-                .bindPopup('Amity University, Noida, Uttar Pradesh')
+                .bindPopup('JUNIOR & SENIOR WING, AMITY INTERNATIONAL SCHOOL-SECTOR 46, Vikas Marg, Sector 46, Gurugram, Haryana 122002')
                 .openPopup();
         });
+
 
     </script>
 </body>
